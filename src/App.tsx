@@ -1,11 +1,14 @@
 import React from 'react';
-
+import { Routes, Route } from 'react-router-dom';
+import { HomePage } from './pages/HomePage';
+import { JobDetailsPage } from './pages/JobDetailsPage';
 
 function App() {
-  return (
-    <div>
-          Learn React       
-    </div>
+   return (
+      <Routes>
+         <Route path='/' element={<HomePage />} />         
+         <Route path='/details' element={<JobDetailsPage />} />         
+      </Routes>
   );
 }
 
