@@ -20,6 +20,6 @@ export interface IJob {
   employment_type: string[];
 }
 
-export interface IProps { 
-   jobs: IJob[];
+export interface IProps {
+  jobs: IJob[];
 }

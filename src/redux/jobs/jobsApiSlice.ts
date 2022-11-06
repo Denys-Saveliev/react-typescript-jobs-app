@@ -12,9 +12,9 @@ export const jobsApi = createApi({
         url: '/data',
         headers: {
           Authorization: 'Bearer wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu',
-          },
-          transformResponse: (response: IJob[]) => response,
-       }),
+        },
+        transformResponse: (response: IJob[]) => response,
+      }),
     }),
   }),
 });

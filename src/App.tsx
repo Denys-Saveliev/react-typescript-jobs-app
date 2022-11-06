@@ -6,18 +6,15 @@ import { HomePage } from './pages/HomePage';
 import { JobDetailsPage } from './pages/JobDetailsPage';
 import { IJob } from './models/models';
 
-export const App: React.FC = () => {   
-   
-  
-
-   return (
-      <div className='container'>
-         <Routes>
-         <Route path="/" element={<HomePage />} />
-         <Route path="/details" element={<JobDetailsPage />} />
+export const App: React.FC = () => {
+  return (
+    <div className="container">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/details" element={<JobDetailsPage />} />
       </Routes>
-      </div>
-   );
-}
+    </div>
+  );
+};
 
 export default App;

@@ -3,15 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-   html {
-      font-family: Proxima Nova;
-      font-style: normal;
-      background-color: #E6E9F2;
-   }
+  html {
+    font-family: Proxima Nova;
+    font-style: normal;
+    background-color: #e6e9f2;
+  }
 }
 
 @layer base {
-   body {
-      padding: 30px 0 65px;
-   }
+  body {
+    padding: 30px 0 65px;
+  }
 }
