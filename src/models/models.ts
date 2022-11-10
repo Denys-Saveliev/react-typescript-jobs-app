@@ -10,9 +10,9 @@ export interface IJob {
   email: string;
   phone: string;
   title: string;
-  salary: string;  
+  salary: string;
   benefits: string[];
-  location: ILocation;  
+  location: ILocation;
   pictures: string[];
   createdAt: Date;
   updatedAt: Date;
@@ -23,7 +23,3 @@ export interface IJob {
 export interface IProps {
   jobs: IJob[];
 }
-
-
-
-
