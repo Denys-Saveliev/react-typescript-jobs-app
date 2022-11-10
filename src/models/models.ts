@@ -1,18 +1,18 @@
 export interface ILocation {
-  lat: number;
-  long: number;
+  lat: string;
+  long: string;
 }
 
 export interface IJob {
+  address: string;
   id: string;
   name: string;
   email: string;
   phone: string;
   title: string;
-  salary: string;
-  address: string;
+  salary: string;  
   benefits: string[];
-  location: ILocation;
+  location: ILocation;  
   pictures: string[];
   createdAt: Date;
   updatedAt: Date;
@@ -23,3 +23,7 @@ export interface IJob {
 export interface IProps {
   jobs: IJob[];
 }
+
+
+
+

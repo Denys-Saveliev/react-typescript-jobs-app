@@ -1,6 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { IJob } from '../../models/models';
 
+const TOKEN: string = process.env.REACT_APP_BEARER_TOKEN as string;
+
 export const jobsApi = createApi({
   reducerPath: 'jobs/api',
   baseQuery: fetchBaseQuery({
@@ -11,7 +13,7 @@ export const jobsApi = createApi({
       query: () => ({
         url: '/data',
         headers: {
-          Authorization: 'Bearer wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu',
+          Authorization: `Bearer ${TOKEN}`,
         },
         transformResponse: (response: IJob[]) => response,
       }),

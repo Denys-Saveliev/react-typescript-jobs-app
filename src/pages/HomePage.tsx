@@ -1,42 +1,67 @@
-import { IJob } from '../models/models';
+import { Link } from 'react-router-dom';
 import { useFetchJobsQuery } from '../redux/jobs/jobsApiSlice';
+import { IJob } from '../models/models';
 import { ReactComponent as MapIcon } from '../images/icons/mapIcon.svg';
+import { ReactComponent as BookmarkIcon } from '../images/icons/bookmarkIcon.svg';
+import moment from "moment";
+
 
 export const HomePage = () => {
-  const { isLoading, data: jobs } = useFetchJobsQuery();
-  console.log(jobs);
-  return (
-    <>
-      {isLoading && <div className="text-center">Loading...</div>}
-      <ul>
-        {jobs &&
-          (jobs as IJob[]).map(job => (
-            <li
-              key={job.id}
-              className="flex h-[164px] px-[16px] py-[24px] mb-[8px] bg-[#FFFFFF] rounded-[8px] shadow-3xl"
-            >
-              <img
-                className="w-[85px] h-[85px] mr-[26px] rounded-full"
-                src={job.pictures[0]}
-                alt={job.name}
-              />
-              <div>
-                <div className="w-[712px]">
-                  <h2 className="text-xl font-bold tracking-[-0.63px] leading-[1.25] text-[#3A4562] mb-[8px]">
-                    {job.title}
-                  </h2>
-                </div>
-                <div className="flex text-base font-normal tracking-[0.24px] leading-[1.56] text-[#878D9D] mb-[8px]">
-                  <h3>Department name</h3>
-                  <ul className="list-disc ml-[25px]">
-                    <li>{job.name}</li>
-                  </ul>
-                </div>
-                <MapIcon />
-              </div>
-            </li>
-          ))}
-      </ul>
-    </>
-  );
+  
+   const { isLoading, data: jobs } = useFetchJobsQuery();
+
+   return (
+      <>
+         {isLoading && <div className="text-center">Loading...</div>}
+         <ul className='pt-[9px] xl:pt-[30px] pb-[25px] xl:pb-[50px]'>
+            {jobs &&
+               (jobs as IJob[]).map(job => (
+                  <li
+                     key={job.id}
+                     className="relative flex w-[396px] xl:w-[1400px] h-[206px] xl:h-[164px] px-[16px] pt-[45px] pb-[27px] xl:py-[24px] mb-[8px] bg-[#EFF0F5] xl:bg-[#FFFFFF] rounded-[8px] shadow-3xl"
+                  >
+                     <p className='block xl:hidden absolute top-[13px] right-[16px] text-[14px] font-light tracking-[0.21px] leading-[1.21] text-[#878D9D]'>Posted {moment(job.updatedAt).fromNow()}</p>
+
+                     <img
+                        className="w-[66px] xl:w-[85px] h-[66px] xl:h-[85px] mr-[19px] xl:mr-[26px] rounded-full"
+                        src={job.pictures[0]}
+                        alt={job.name}
+                     />
+                     <div>
+                        <div className="w-[278px] xl:w-[712px] h-[48px] xl:h-[50px] text-clip overflow-hidden ">
+                           <Link to={`/details/${job.id}`} className='hover:opacity-80' ><h2 className="text-[18px] xl:text-[20px] font-normal xl:font-bold tracking-[-0.57px] xl:tracking-[-0.63px] leading-[1.33] xl:leading-[1.25] text-[#3A4562] mb-[5px] xl:mb-[8px]">
+                              {job.title}
+                           </h2></Link>
+                        </div>
+                        <div className="flex text-[16px] font-normal tracking-[0.24px] leading-[1.56] text-[#878D9D] mb-[7px] xl:mb-[8px]">
+                           <p>Department name &#x2022; {job.name}</p>                           
+                        </div>
+                        <div className='flex items-center'>
+                           <MapIcon />
+                           <p className='ml-[8px] text-[#878D9D] font-normal text-[16px] tracking-[0.24px] leading-[1.56]'>{ job.address}</p>
+                        </div>
+                     </div>
+                     <div className='ml-auto flex flex-col justify-between hidden xl:flex'>
+                        <BookmarkIcon className='xl:ml-auto xl:cursor-pointer xl:hover:opacity-80' />
+                        <p className='text-[16px] font-normal tracking-[0.24px] leading-[1.56] text-[#878D9D]'>Posted {moment(job.updatedAt).fromNow()}</p>
+                     </div>
+                  </li>
+                  
+               ))}
+         </ul>
+         <div className='relative w-[396px] h-[40px] bg-[#F9FAFD] rounded-[8px] mb-[17px] px-[52.5px] pt-[9px]'>
+             <div className="absolute left-[52px] h-[24px] w-[1px] bg-divider"></div>
+            <ul className='flex justify-center content-end h-[30.5px] font-bold text-[16px] tracking-[1.34px] leading-[1.19] text-numbers'>
+               <li className='w-[24px] mr-[6px]'>1</li>
+               <li className='w-[24px] mr-[6px]'>2</li>
+               <li className='w-[24px] mr-[6px]'>3</li>
+               <li className='w-[24px] mr-[6px]'>4</li>
+               <li className='w-[24px] mr-[6px]'>5</li>
+               <li className='after:absolute after:bottom-[-2px] after:content-["..."] w-[24px] mr-[6px]'></li>
+               <li className='w-[24px]'>18</li>
+            </ul>
+            <div className="absolute right-[52px] top-[9px] h-[24px] w-[1px] bg-divider"></div>
+         </div>
+      </>
+   );
 };
