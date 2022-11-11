@@ -21,5 +21,5 @@ export interface IJob {
 }
 
 export interface IProps {
-  jobs: IJob[];
+  children: React.ReactNode;
 }
