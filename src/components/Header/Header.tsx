@@ -3,7 +3,7 @@ import { ReactComponent as ShapeIcon } from '../../images/icons/shapeIcon.svg';
 
 export const Header = () => {
   return (
-    <div className="xl:flex xl:justify-between xl:pb-[9px] xl:pt-[55px] xl:border-b-[1px] border-b-[#3A456213] xl:mb-[40px]">
+    <div className="xl:flex xl:justify-between xl:pb-[9px] xl:pt-[55px] xl:border-b-[1px] border-b-[#3A456213]">
       <h1 className="font-bold text-[28px] tracking-[0.41px] leading-[1.21] text-[#3A4562] pt-[24px] xl:pt-0 pb-[12px] xl:pb-0 border-b-[1px] xl:border-b-0 border-b-[#3A456213] mb-[24px] xl:mb-0">
         Job Details
       </h1>

@@ -13,13 +13,12 @@ export interface IJob {
   salary: string;
   benefits: string[];
   location: ILocation;
-  pictures: string[];
-  createdAt: Date;
-  updatedAt: Date;
+  pictures: string;
+  createdAt: Date;  
   description: string;
   employment_type: string[];
 }
 
 export interface IProps {
-  children: React.ReactNode;
+  jobs: IJob[];
 }
