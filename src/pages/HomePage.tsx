@@ -18,9 +18,9 @@ export const HomePage = () => {
           <ThreeDots height="80" width="80" color="#55699E" />
         </div>
       )}
-      
-       {jobs && <JobsList jobs={jobs} />}        
-      {isLoading || isError ? null : (<Pagination/>)}
+
+      {jobs && <JobsList jobs={jobs} />}
+      {isLoading || isError ? null : <Pagination />}
     </div>
   );
 };

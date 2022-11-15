@@ -14,9 +14,11 @@ export interface IJob {
   benefits: string[];
   location: ILocation;
   pictures: string;
-  createdAt: Date;  
+  createdAt: Date;
   description: string;
   employment_type: string[];
+  responsibilities: string[];
+  compensations: string[];
 }
 
 export interface IProps {

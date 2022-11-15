@@ -9,7 +9,7 @@ export const jobsApi = createApi({
   endpoints: builder => ({
     fetchJobs: builder.query<IJob[], void>({
       query: () => ({
-        url: 'jobs',       
+        url: 'jobs',
         transformResponse: (response: IJob[]) => response,
       }),
     }),
