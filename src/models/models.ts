@@ -1,7 +1,6 @@
 export interface ILocation {
   lat: string;
-   lng: string;
-   
+  lng: string;
 }
 
 export interface IJob {
@@ -19,8 +18,8 @@ export interface IJob {
   description: string;
   employment_type: string[];
   responsibilities: string[];
-   compensations: string[];
-   city?: string;
+  compensations: string[];
+  city?: string;
 }
 
 export interface IProps {
