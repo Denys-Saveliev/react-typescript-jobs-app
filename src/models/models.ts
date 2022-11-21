@@ -19,8 +19,8 @@ export interface IJob {
   employment_type: string[];
   responsibilities: string[];
   compensations: string[];
-   city?: string;
-   images: string[];
+  city?: string;
+  images: string[];
 }
 
 export interface IProps {

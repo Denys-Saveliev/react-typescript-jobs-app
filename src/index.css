@@ -3,14 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-   html {
-      font-family: Proxima Nova;
-      font-style: normal;
-   }
+  html {
+    font-family: Proxima Nova;
+    font-style: normal;
+  }
 }
 
-
-
 .swiper-slide {
-   width: 209px !important;
+  width: 209px !important;
 }
