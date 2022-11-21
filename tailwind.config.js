@@ -1,7 +1,11 @@
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      dropShadow: {
+        'drop-shadow': '0px 4px 4px rgba(0, 0, 0, 0.25)',
+      },
+    },
 
     container: {
       center: true,
@@ -18,6 +22,7 @@ module.exports = {
       '3xl':
         ' 2px 1px 7px rgba(0, 0, 0, 0.08), 0px 2px 1px -1px rgba(0, 0, 0, 0.04), 0px 1px 3px rgba(0, 0, 0, 0.12)',
     },
+
     colors: {
       divider: 'rgba(56, 65, 93, 0.0513276)',
       numbers: 'rgba(56, 65, 93, 0.602109)',

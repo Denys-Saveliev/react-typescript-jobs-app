@@ -13,13 +13,14 @@ export interface IJob {
   salary: string;
   benefits: string[];
   location: ILocation;
-  pictures: string;
+  picture: string;
   createdAt: Date;
   description: string;
   employment_type: string[];
   responsibilities: string[];
   compensations: string[];
-  city?: string;
+   city?: string;
+   images: string[];
 }
 
 export interface IProps {
