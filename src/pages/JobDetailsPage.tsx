@@ -8,27 +8,30 @@ import { AttachedImages } from '../components/AttachedImages/AttachedImages';
 import { AdditionalInfo } from '../components/AdditionalInfo/AdditionalInfo';
 
 export const JobDetailsPage = () => {
-   const { data: jobs } = useFetchJobsQuery();
-   const { jobId } = useParams<string>();
+  const { data: jobs } = useFetchJobsQuery();
+  const { jobId } = useParams<string>();
 
-   const job = jobs?.find(job => job.id === jobId);
+  const job = jobs?.find(job => job.id === jobId);
 
-   return (
-      <div className="container bg-[#FFFFFF]">
-         <div className="xl:w-[775px] xl:pr-[50px]">
-            <Header />
-            <Description job={job} />
-            <Responsibilities responsibilities={job?.responsibilities} />
-            <Compensations compensations={job?.compensations} />
-            <AttachedImages
-               images={job?.images}
-               alt={job?.title}
-               class={'xl:hidden'}
-            />
-            <AdditionalInfo types={job?.employment_type} benefits={job?.benefits} />
-            <AttachedImages images={job?.images}
-               alt={job?.title} class={'hidden xl:block'} />
-         </div>
+  return (
+    <div className="container bg-[#FFFFFF]">
+      <div className="xl:w-[775px] xl:pr-[50px]">
+        <Header />
+        <Description job={job} />
+        <Responsibilities responsibilities={job?.responsibilities} />
+        <Compensations compensations={job?.compensations} />
+        <AttachedImages
+          images={job?.images}
+          alt={job?.title}
+          class={'xl:hidden'}
+        />
+        <AdditionalInfo types={job?.employment_type} benefits={job?.benefits} />
+        <AttachedImages
+          images={job?.images}
+          alt={job?.title}
+          class={'hidden xl:block'}
+        />
       </div>
-   );
+    </div>
+  );
 };
