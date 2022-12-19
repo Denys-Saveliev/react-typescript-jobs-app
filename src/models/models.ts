@@ -1,7 +1,3 @@
-export interface ILocation {
-  lat: string;
-  lng: string;
-}
 
 export interface IJob {
   address: string;
@@ -12,7 +8,7 @@ export interface IJob {
   title: string;
   salary: string;
   benefits: string[];
-  location: ILocation;
+  location: string;
   picture: string;
   createdAt: Date;
   description: string;
